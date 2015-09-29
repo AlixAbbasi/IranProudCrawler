@@ -15,7 +15,7 @@ class bcolors:
 m3utext="#EXTINF:-1,"
 logohandler=" #IMG:"
 #logoemitter=""
-print bcolors.OKBLUE + "System Initialization to capture live tv channels from IranProud server" + bcolors.OKBLUE
+print bcolors.BOLD + "System Initialization to capture live tv channels from IranProud server" + bcolors.BOLD
 url='http://www.iranproud.com/livetv'
 BaseURL="http://www.iranproud.com"
 #url2="http://www.iranproud.com"
@@ -41,9 +41,9 @@ while i>=x:
         response2.close()
         match2=re.compile('.+? videosrc="(.+?)".+?').findall(link2)
         for ChannelURL in match2:
-             print ChannelURL
+             print bcolors.FAIL + ChannelURL + bcolors.FAIL
              ChannelNameFinal = (ChannelURL.split("/")[-1].split(".")[0])
-             print ChannelNameFinal
+             print bcolors.OKBLUE + ChannelNameFinal + bcolors.OKBLUE
              print logo
              with open("tvlist.m3u", "ab") as myfile:
                  #myfile.write(m3utext+ChannelNameFinal+logohandler+logo)
