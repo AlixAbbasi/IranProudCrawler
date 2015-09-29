@@ -1,6 +1,5 @@
-#Written by Ali Abbasi 
-# Why I made this script?
-# Because I could not sleep at night and I wanted to mess up with IranProud...
+# Written by Ali Abbasi 
+# Just to update my openelec IPTV system. 
 # 
 import urllib2,urllib,re
 class bcolors:
