@@ -1,6 +1,6 @@
-# Written by Ali Abbasi 
+#Written by Ali Abbasi 
 # Why I made this script?
-# Because I could not sleep last night and I wanted to mess up with IranProud...
+# Because I could not sleep at night and I wanted to mess up with IranProud...
 # 
 import urllib2,urllib,re
 class bcolors:
@@ -15,13 +15,13 @@ class bcolors:
 m3utext="#EXTINF:-1,"
 logohandler=" #IMG:"
 #logoemitter=""
-print bcolors.FAIL + "System Initialization to capture live tv channels from IranProud server" + bcolors.FAIL
+print bcolors.OKBLUE + "System Initialization to capture live tv channels from IranProud server" + bcolors.OKBLUE
 url='http://www.iranproud.com/livetv'
 BaseURL="http://www.iranproud.com"
 #url2="http://www.iranproud.com"
 req = urllib2.Request(url)
 print "Connecting to IranProud server"
-req.add_header('User-Agent', 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.0.3) Gecko/2015092717 Firefox/3.0.3')
+req.add_header('User-Agent', 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.0.3) Gecko/2015092817 Firefox/3.0.3')
 response = urllib2.urlopen(req)
 link=response.read()
 response.close()
@@ -45,12 +45,13 @@ while i>=x:
              ChannelNameFinal = (ChannelURL.split("/")[-1].split(".")[0])
              print ChannelNameFinal
              print logo
-             with open("test.txt", "ab") as myfile:
+             with open("tvlist.m3u", "ab") as myfile:
                  #myfile.write(m3utext+ChannelNameFinal+logohandler+logo)
                  myfile.write(m3utext+ChannelNameFinal)
-                 myfile.write("@")
+                 myfile.write("\n")
                  myfile.write(ChannelURL)
-                 myfile.write("@")
+                 myfile.write("\n")
+                 myfile.write("\n")
                  myfile.close
              #print logo
         match2 = None
