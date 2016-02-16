@@ -1,4 +1,4 @@
-#IranProud Crawler V1.1
+#IranProud Crawler V1.2
 #Now It can save the channel images to photo folder.
 #Written by Ali Abbasi 
 # 
