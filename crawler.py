@@ -1,7 +1,18 @@
-# Written by Ali Abbasi 
-# Just to update my openelec IPTV system. 
+#IranProud Crawler V1.1
+#Now It can save the channel images to photo folder.
+#Written by Ali Abbasi 
 # 
 import urllib2,urllib,re
+import os
+myPath="photo/"
+print "Preparing the File for write operation"
+new_extension=".png"
+f = open('tvlist.m3u','w')
+f.write('\n')
+f.write('#EXTM3U\n')
+f.write('\n')
+f.close()
+
 class bcolors:
    HEADER = '\033[95m'
    OKBLUE = '\033[94m'
@@ -40,7 +51,12 @@ while i>=x:
              print bcolors.FAIL + ChannelURL + bcolors.FAIL
              ChannelNameFinal = (ChannelURL.split("/")[-1].split(".")[0])
              print bcolors.OKBLUE + ChannelNameFinal + bcolors.OKBLUE
+             print "This is Logo URL"
              print logo
+             fullfilename = os.path.join(myPath, ChannelNameFinal)
+             urllib.urlretrieve(logo, fullfilename)
+             pre, ext = os.path.splitext(fullfilename)
+             os.rename(fullfilename, pre + new_extension)
              with open("tvlist.m3u", "ab") as myfile:
                  myfile.write(m3utext+ChannelNameFinal)
                  myfile.write("\n")
@@ -55,4 +71,3 @@ while i>=x:
         mainurl = None
         print x
         x = x+1
-
