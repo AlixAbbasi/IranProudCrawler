@@ -1,5 +1,5 @@
 #IranProud Crawler V1.2
-#Now It can save the channel images to photo folder.
+#Now It can save the channel images to icons folder.
 #Written by Ali Abbasi 
 # 
 import requests
@@ -51,7 +51,7 @@ while i>=x:
              print bcolors.OKBLUE + ChannelNameFinal + bcolors.OKBLUE
              print "This is Logo URL:"
              print logo
-             with open('photo/' +ChannelNameFinal + extension, 'wb') as handle:
+             with open('icons/' +ChannelNameFinal + extension, 'wb') as handle:
                 response = requests.get(logo, stream=True)
                 if not response.ok:
                     print "Request timeout on saving icon"
