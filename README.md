@@ -6,6 +6,7 @@ IranProudCrawler is a python script to detect live tv urls from IranProud server
 - No longer using urllib, we are now using the requests to make the performance better
 - Support icon! now you can add icons to the channel. Please look at the `How to add icons' section.
 - Fixed a bug in the v1.0 which was not working with IPTV Simple PVR
+- Added the functionality to detect server response timeout.
 
 ###Requirements
 - Its better you run this code in Linux, e.g. the OpenElec itself
