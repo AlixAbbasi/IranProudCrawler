@@ -8,7 +8,7 @@ IranProudCrawler is a python script to detect live tv urls from IranProud server
 - Fixed a bug in the v1.0 which was not working with IPTV Simple PVR
 - Added the functionality to detect server response timeout.
 
-###Requirements
+### Requirements
 - Its better you run this code in Linux, e.g. the OpenElec itself
 - You need to install the `requests` module. To install the module please type `sudo pip install requests` and you are ready!. 
 - Please make sure that you have a "icons" folder in the same folder as crawler.py. 
